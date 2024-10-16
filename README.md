@@ -24,7 +24,6 @@ This project provides a **Bash script** to download, extract, and manage **Apach
 
 ## Usage
 
-```bash
 ./atomicorp_waf_downloader.sh [OPTIONS]
 
 ### Options
