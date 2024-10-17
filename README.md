@@ -1,12 +1,12 @@
 # Atomicorp WAF Rule Downloader
 
-This project provides a **Bash script** to download, extract, and manage **Apache or NGINX WAF rules** from Atomicorp. The script allows users to **select rule classes**, list available rules, and customize which rules to download based on their needs for both open source and commercial projects. 
+This project provides a **Bash script** to download, extract, and manage **Apache or NGINX WAF rules** from Atomicorp. The script allows users to **select rule classes**, list available rules, and customize which rules to download based on their needs for both open source and commercial projects. To sign up and create an account to download the rules, visit [Atomicorp WAF Rule Subscription](https://www.atomicorp.com/amember/cart/index/product/id/127/c/).
 
 ---
 
 ## Features
 
-- Download **Apache** or **NGINX** WAF rules.
+- Download **Apache** or **NGINX** WAF rules.
 - Select specific WAF **rule classes** to download.
 - List available rule classes from the configuration.
 - Handle **missing files** gracefully by skipping them.
@@ -24,37 +24,40 @@ This project provides a **Bash script** to download, extract, and manage **Apach
 
 ## Usage
 
+```bash
 ./atomicorp_waf_downloader.sh [OPTIONS]
+```
 
 ### Options
 
-- `-c`  
+- `-c`\
   Check the latest MODSEC version.
 
-- `-d`  
+- `-d`\
   Download WAF rules for the selected rule classes.
 
-- `-t`  
+- `-t`\
   Select the rule type: `apache` or `nginx` (default: apache).
 
-- `-u`  
+- `-u`\
   Provide the username for authentication.
 
-- `-p`  
+- `-p`\
   Provide the password for authentication.
 
-- `-o`  
+- `-o`\
   Set the output directory to store the extracted contents (default: current directory).
 
-- `-r`  
+- `-r`\
   Provide a comma-separated list of WAF rule classes to download (default: predefined set).
 
-- `-l`  
+- `-l`\
   List all available rule classes from the configuration.
 
-- `-h`  
+- `-h`\
   Show the help message.
 
+---
 
 ## Default Rule Classes
 
@@ -75,24 +78,33 @@ If no rule classes are specified with the `-r` option, the following **default r
 - `MODSEC_99_JITP`
 - `MODSEC_99_MALWARE_OUTPUT`
 
+---
 
 ## Examples
 
 1. **Check the latest MODSEC version**:
+
    ```bash
    ./atomicorp_waf_downloader.sh -c
+   ```
 
 2. **Download Apache WAF rules using predefined classes**:
+
    ```bash
    ./atomicorp_waf_downloader.sh -d -t apache -u your_username -p 'your_password' -o /path/to/output
+   ```
 
 3. **Download NGINX WAF rules with custom rule classes**:
+
    ```bash
    ./atomicorp_waf_downloader.sh -d -t nginx -u your_username -p 'your_password' -o /path/to/output -r MODSEC_10_RULES,MODSEC_12_BRUTE
+   ```
 
 4. **List all available rule classes**:
+
    ```bash
    ./atomicorp_waf_downloader.sh -l
+   ```
 
 
 
